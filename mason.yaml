@@ -1,0 +1,7 @@
+bricks:
+  hello:
+    path: bricks/hello
+  page_widget:
+    path: bricks\page_widget
+  repository:
+    path: bricks\repository

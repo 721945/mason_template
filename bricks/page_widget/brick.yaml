@@ -1,0 +1,6 @@
+name: page_widget
+description: Create page widget with page and view
+vars:
+  - name
+  - stateful
+  - routable
