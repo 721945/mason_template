@@ -1,0 +1,5 @@
+name: freezed_bloc
+description: A new brick created with the Mason CLI.
+vars:
+  - name
+  - repo
