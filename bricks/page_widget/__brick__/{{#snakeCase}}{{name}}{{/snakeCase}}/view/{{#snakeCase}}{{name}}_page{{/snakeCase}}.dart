@@ -25,8 +25,14 @@ class  _{{#pascalCase}}{{name}}_view{{/pascalCase}} extends StatefulWidget {
 class _{{#pascalCase}}{{name}}_view{{/pascalCase}}State extends State<_{{#pascalCase}}{{name}}_view{{/pascalCase}}> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-       body: SizedBox(),
+    return  Scaffold(
+        appBar: AppBar(
+          title: Text('Title'),
+        ),
+        body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const <Widget>[],
+      ),
     );
   }
 }
@@ -37,8 +43,14 @@ class _{{#pascalCase}}{{name}}_view{{/pascalCase}} extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-       body: SizedBox(),
+    return  Scaffold(
+        appBar: AppBar(
+          title: Text('Title'),
+        ),
+        body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: const <Widget>[],
+      ),
     );
 }
 }
