@@ -2,6 +2,14 @@ bricks:
   hello:
     path: bricks/hello
   page_widget:
-    path: bricks\page_widget
+    git:
+      url: "https://github.com/721945/mason_template"
+      path: bricks/page_widget
   repository:
-    path: bricks\repository
+    git:
+      url: "https://github.com/721945/mason_template"
+      path: bricks/repository
+  freezed_bloc:
+    git:
+      url: "https://github.com/721945/mason_template"
+      path: bricks/freezed_bloc

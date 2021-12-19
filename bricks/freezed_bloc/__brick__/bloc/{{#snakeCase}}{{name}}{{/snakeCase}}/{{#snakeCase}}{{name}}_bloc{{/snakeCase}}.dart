@@ -17,8 +17,8 @@ class {{#pascalCase}}{{name}}_bloc{{/pascalCase}} extends Bloc<{{#pascalCase}}{{
     };
   final {{#pascalCase}}{{repo}}_repository{{/pascalCase}} _{{#camelCase}}{{repo}}_repository{{/camelCase}};
   Future<void> _onStarted(
-    AuthenticationEvent event,
-    Emitter<AuthenticationState> emit,
+    {{#pascalCase}}{{name}}_event{{/pascalCase}} event,
+    Emitter<{{#pascalCase}}{{name}}_state{{/pascalCase}}> emit,
   ) async {
     emit(const _Loading());
       try {
