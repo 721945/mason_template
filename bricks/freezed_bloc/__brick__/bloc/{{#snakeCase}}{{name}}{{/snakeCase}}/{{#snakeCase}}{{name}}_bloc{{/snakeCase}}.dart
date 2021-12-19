@@ -11,23 +11,22 @@ class {{#pascalCase}}{{name}}_bloc{{/pascalCase}} extends Bloc<{{#pascalCase}}{{
   {{#pascalCase}}{{name}}_state{{/pascalCase}}> {
   {{#pascalCase}}{{name}}_bloc{{/pascalCase}}({ 
     required {{#pascalCase}}{{repo}}_repository{{/pascalCase}} {{#camelCase}}{{repo}}_repository{{/camelCase}} 
-    }) : _{{#camelCase}}{{repo}}_repository{{/camelCase}} = {{#camelCase}}{{repo}}_repository{{/camelCase}}, super(const _Initial());
+    }) : _{{#camelCase}}{{repo}}_repository{{/camelCase}} = {{#camelCase}}{{repo}}_repository{{/camelCase}}, 
+        super(const _Initial()) {
+      on<_Started>(_onStarted);
+    };
   final {{#pascalCase}}{{repo}}_repository{{/pascalCase}} _{{#camelCase}}{{repo}}_repository{{/camelCase}};
-  @override
-  Stream<{{#pascalCase}}{{name}}_state{{/pascalCase}}> mapEventToState(
-    {{#pascalCase}}{{name}}_event{{/pascalCase}} event) async* {
-      if (event is _Started) {
-        yield* mapStartedEventToState(event);
-      }
-  }
-  Stream<{{#pascalCase}}{{name}}_state{{/pascalCase}}> mapStartedEventToState(
-    _Started event) async* {
-      yield const {{#pascalCase}}{{name}}_state{{/pascalCase}}.loading();
+  Future<void> _onStarted(
+    AuthenticationEvent event,
+    Emitter<AuthenticationState> emit,
+  ) async {
+    emit(const _Loading());
       try {
         final result = await _{{#camelCase}}{{repo}}_repository{{/camelCase}}.fetch();
-        yield {{#pascalCase}}{{name}}_state{{/pascalCase}}.loaded();
+        emit(const _Loaded());
       } catch (e) {
-        yield {{#pascalCase}}{{name}}_state{{/pascalCase}}.error(message:e.toString());
+        emit(const _Failed());
       }
-    }
+  }
+
 }

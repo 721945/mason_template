@@ -5,7 +5,9 @@ class {{#pascalCase}}{{name}}_page{{/pascalCase}} extends StatelessWidget {
   const {{#pascalCase}}{{name}}_page{{/pascalCase}}({Key? key}) : super(key: key);
   {{#routable}}
   static PageRoute route() {
-    return MaterialPageRoute<dynamic>(builder: (context)=> const {{#pascalCase}}{{name}}_page{{/pascalCase}}());
+    return MaterialPageRoute<dynamic>(
+      builder: (context) => const {{#pascalCase}}{{name}}_page{{/pascalCase}}(),
+          );
   }
   {{/routable}}
   @override
@@ -26,12 +28,9 @@ class _{{#pascalCase}}{{name}}_view{{/pascalCase}}State extends State<_{{#pascal
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        appBar: AppBar(
-          title: Text('Title'),
-        ),
+        appBar: AppBar(),
         body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[],
       ),
     );
   }
@@ -44,14 +43,11 @@ class _{{#pascalCase}}{{name}}_view{{/pascalCase}} extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-        appBar: AppBar(
-          title: Text('Title'),
-        ),
+        appBar: AppBar(),
         body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[],
       ),
     );
-}
+  }
 }
 {{/stateful}}  
