@@ -7,7 +7,7 @@ class {{#pascalCase}}{{name}}_page{{/pascalCase}} extends StatelessWidget {
   static PageRoute route() {
     return MaterialPageRoute<dynamic>(
       builder: (context) => const {{#pascalCase}}{{name}}_page{{/pascalCase}}(),
-          );
+    );
   }
   {{/routable}}
   @override

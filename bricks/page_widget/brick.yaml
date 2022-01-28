@@ -1,5 +1,6 @@
 name: page_widget
 description: Create page widget with page and view
+version: 1.0.0
 vars:
   - name
   - stateful
