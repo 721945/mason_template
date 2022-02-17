@@ -1,1 +1,1 @@
-export 'view/{{#snakeCase}}{{name}}_page{{snakeCase}}.dart';
+export 'view/{{#snakeCase}}{{name}}_page{{/snakeCase}}.dart';
